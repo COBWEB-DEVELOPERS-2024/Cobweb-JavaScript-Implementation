@@ -2,7 +2,7 @@
 
 Building a new implementation of the COBWEB 2.0 (Complexity & Organized Behaviour Within Environmental Bounds) computer simulation model by rewriting codebase in TypeScript/JavaScript so that COBWEB can be run on the internet without needing to download it.
 
-  
+Authors: Gloria Li
 
 # **Introduction:**
 
@@ -71,14 +71,34 @@ An agent is a singular entity that acts as simulates a living organism through t
 
 *   Change energy level through consuming food or spending energy to complete tasks
 *   Reproduce to create other agents
-*     
-    
+
+# **Genetic Algorithm**
+
+The genetic algorithm in the provided `GeneticCode.java` class is based on the following key operations:
+
+1. **Genetic Similarity Comparison**:
+   - The `compareGeneticSimilarity` method compares two genetic sequences and returns their percentage similarity based on the number of identical bits.
+
+2. **Genetic Code Creation (Meiosis)**:
+   - **Average Method**: The `createGeneticCodeMeiosisAverage` method creates a new genetic code by averaging the genes of two parent genetic codes.
+   - **Gene Swap Method**: The `createGeneticCodeMeiosisGeneSwap` method creates a new genetic code by randomly selecting genes from either parent.
+   - **Recombination Method**: The `createGeneticCodeMeiosisRecomb` method creates a new genetic code by combining fragments from both parents at a random split point.
+
+3. **Mutation**:
+   - The `mutate` method flips a bit at a specified position in the genetic sequence, introducing variation.
+
+4. **Genetic Code Management**:
+   - Methods like `getNumGenes`, `getValue`, `setValue`, `getBitSet`, and `setBitSet` manage the genetic sequence, allowing for retrieval and modification of genes.
+
+5. **Initialization and Copying**:
+   - Constructors initialize genetic codes, either from scratch or by copying an existing genetic code.
+
+These operations collectively form the basis of the genetic algorithm, enabling the simulation of genetic inheritance, variation, and evolution.
+
+# **Cellular Automation**
 
   
 
-Agents are stored
-
-  
 
 ## Environment
 
@@ -87,9 +107,8 @@ The environment is a grid where each cell has 4 states:
 *   Empty
 *   Agent-Occupied
 *   Food-Occupied
-*   Stone-Occupied
+*   Barrrier-Occupied
 
-  
 
   
 
