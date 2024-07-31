@@ -8,7 +8,9 @@ Authors: Gloria Li
 
 This Implementation will include all features of COBWEB 2.0, which simulates the interactions and behaviours of agents within a dynamic environment. By allowing users to customize agents, resources and environmental factors, COBWEB is used to study emergent behaviours (eg. Prisoner's Dilemma) and other system dynamics in fields including health science, economics, ecology, etc.
 
-  
+# **Tech stack**
+Backend: NodeJS / Postgress DB to store users and their simulations, results
+Frontend: NextJS / WebGL to run shaders. Possibly WASM for running simulations
 
 ## **COBWEB 2.0 Guide:**
 
@@ -95,6 +97,8 @@ The genetic algorithm in the provided `GeneticCode.java` class is based on the f
 
 These operations collectively form the basis of the genetic algorithm, enabling the simulation of genetic inheritance, variation, and evolution.
 
+
+
 # **Cellular Automation**
 
   
@@ -115,9 +119,23 @@ The environment is a grid where each cell has 4 states:
 # **UI Elements**
 
 WebGL and OpenCL will be used to created a shader-based visual display of the simulation.
+[WebGL Shader](https://developer.mozilla.org/en-US/docs/Web/API/WebGLShader)
+Holosense plugin can possibly be integrated in the visualizer
+
+**Superscalar Simulation system**
+A genetic algorithm or very simple neural network can be implemented in a vertex shader, where all the agents are like vertices in a rendering scene.
+- Physics systems Will have some form of numerical integrator, possibly euler method, but verlet or runge-kutta numerical methods could also work
+- Particle's position, velocity, potential energy, etc. will be calculated. Other properties could be used to generate a force field, which can be computed over a 3d hash-table or KD tree. This force field acts on other particles in the next iteration.
+dynamic positional encoding data structures may or may not be parallelizeable
+
+**Visualizers**
+Holosense integration: it's all shaders anyway, so the simulation and visualization elements can be made the same.
+this will increase the efficiency and frame rate.
 
 # **Customization and Modification:**
 
   
 
 # **File Operations:**
+
+
